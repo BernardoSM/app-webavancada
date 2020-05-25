@@ -1,19 +1,8 @@
-# chat-probot
+# APP Front-end
 
-## Project setup
-```
-npm install
-```
+## Startar o app
+1. npm i
+2. npm run serve
+3. acessar localhost:8000
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`Trabalho realizado por: Matheus Bertolani, Gabriel Tessinari, Bernardo Simonassi e Gabriel Randow`
