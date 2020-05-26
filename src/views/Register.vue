@@ -13,6 +13,9 @@
 			<GlobalInput nome="Senha">
 				<input type="password" v-model="register.password" placeholder=" ">
 			</GlobalInput>
+			<div class="error">
+				{{ error }}
+			</div>
 			<router-link to="/login" class="link">
 				Já tem uma conta? Fazer login
 			</router-link>
@@ -37,7 +40,8 @@
 					name: '',
 					email: '',
 					password: ''
-				}
+				},
+				error: ''
 			}
 		},
 		methods: {
@@ -47,6 +51,8 @@
 			signUp() {
 				this.registerRequest(this.register).then(resp =>{
 					this.$router.push('/login')
+				}, err => {
+					this.error = err.response.data
 				})
 			}
 		}

@@ -10,6 +10,9 @@
 			<GlobalInput nome="Senha">
 				<input type="password" v-model="login.password" placeholder=" ">
 			</GlobalInput>
+			<div class="error">
+				{{ error }}
+			</div>
 			<router-link to="/register" class="link">
 				Não tem uma conta? Registre-se
 			</router-link>
@@ -33,7 +36,8 @@
 				login: {
 					email: '',
 					password: ''
-				}
+				},
+				error: ''
 			}
 		},
 		methods: {
@@ -43,6 +47,8 @@
 			signIn() {
 				this.authRequest(this.login).then(resp =>{
 					this.$router.push('/')
+				}, err => {
+					this.error = err.response.data
 				})
 			}
 		}
@@ -80,6 +86,10 @@
 				text-align: center;
 				display: block;
 				margin-top: 20px;
+			}
+
+			.error {
+				color: #e74c3c;
 			}
 
 			.btn {
