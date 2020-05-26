@@ -1,6 +1,6 @@
 <template>
 	<div class="footer">
-		Probot messenger
+		Messenger
 	</div>
 </template>
 
